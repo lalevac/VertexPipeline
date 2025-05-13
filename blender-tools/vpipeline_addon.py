@@ -32,10 +32,7 @@ from bpy.props import (
     
 ### PROPS
 
-class VPipelineProperties(PropertyGroup):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-    
+class VPipelineProperties(PropertyGroup):   
     color_name : StringProperty(name = "Color Vertex Data", default = "ColorX", description = "Color Vertex Data")
     metal_name : StringProperty(name = "Metal/Rough Vertex Data", default = "MetalX", description = "Color Vertex Data")
     v_name : StringProperty(name = "V Name", default = "", description = "Current Vertex Data Name")
@@ -55,9 +52,6 @@ class VPipelinePanel(Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = "V Pipeline"
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
     
     @classmethod
     def poll(cls, context):
@@ -200,8 +194,7 @@ class VPipelinePanel(Panel):
         else:
             row = layout.row()
             row.label(text="Setup incomplete.")
-        
-        
+
 ### HELPER FUNCTIONS
 
 def srgb_to_linear(c):
@@ -233,9 +226,6 @@ class SetActive(Operator):
     bl_options = {'REGISTER', 'UNDO'}
     
     active_name: IntProperty(name = "Set Active Name", default=0)
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
     
     @classmethod
     def poll(cls, context):
@@ -281,9 +271,6 @@ class SetMetalColor(Operator):
     
     palette_index: IntProperty(name = "Palette Index", default=0)
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-    
     @classmethod
     def poll(cls, context):
         # Make the operator available in all contexts by returning True
@@ -310,9 +297,6 @@ class SelectCurrentColor(Operator):
     bl_options = {'REGISTER', 'UNDO'}
     
     index: IntProperty(name = "Index", default=0)
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
     
     @classmethod
     def poll(cls, context):
@@ -352,15 +336,11 @@ class SelectCurrentColor(Operator):
         
         return {'FINISHED'}
 
-
 class PrintPalette(Operator):
     """Print Palette"""
     bl_idname = "object.v_print_palette"
     bl_label = "Print Palette"
     bl_options = {'REGISTER', 'UNDO'}
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
     
     @classmethod
     def poll(cls, context):
@@ -418,9 +398,6 @@ class Setup(Operator):
     bl_idname = "object.v_setup"
     bl_label = "Setup"
     bl_options = {'REGISTER', 'UNDO'}
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
     
     @classmethod
     def poll(cls, context):
@@ -505,9 +482,6 @@ class VPaint(Operator):
     bl_label = "V Paint"
     bl_options = {'REGISTER', 'UNDO'}
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-    
     @classmethod
     def poll(cls, context):
         # Make the operator available in all contexts by returning True
@@ -524,8 +498,6 @@ class VPaint(Operator):
         
         return {'FINISHED'}
 
-
-
 class MapUVs(Operator):
     """Map UVs"""
     bl_idname = "object.v_map_uvs"
@@ -533,9 +505,6 @@ class MapUVs(Operator):
     bl_options = {'REGISTER', 'UNDO'}
     
     map: BoolProperty(name = "Map", default=True)
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
     
     @classmethod
     def poll(cls, context):
@@ -595,7 +564,6 @@ class MapUVs(Operator):
                     
         return {'FINISHED'}
 
-
 class PrepExport(Operator):
     """Prep for Export"""
     bl_idname = "object.v_prep_export"
@@ -603,9 +571,6 @@ class PrepExport(Operator):
     bl_options = {'REGISTER', 'UNDO'}
     
     reset: BoolProperty(name = "Reset", default=False)
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
     
     @classmethod
     def poll(cls, context):
@@ -645,7 +610,6 @@ class PrepExport(Operator):
                 obj.data.materials.clear()
         
         return {'FINISHED'}
-
 
 ###
 
