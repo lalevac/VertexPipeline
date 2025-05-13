@@ -139,7 +139,7 @@ class VPipelinePanel(Panel):
                 row.operator("object.v_set_active", icon='NONE', text="Metal").active_name = 1
                 
                 row = box.row()
-                row.operator("object.v_paint", text="Paint Vertex Colors", icon="BRUSH_PAINT_SELECT")
+                row.operator("object.v_paint", text="Paint Vertex Colors", icon="VPAINT_HLT")
                 
                 row = box.row()
                 row.prop(context.tool_settings.vertex_paint.brush, "color", text="Active Color")
