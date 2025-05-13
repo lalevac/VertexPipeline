@@ -2,10 +2,11 @@ bl_info = {
     "name": "V Pipeline",
     "description": "Vertex based pipeline",
     "author": "Michael Jared",
-    "version": (0,1),
-    "location": "View3D > Properties > Godot Pipeline",
+    "version": (0, 2),
+    "location": "View3D > Properties > V Pipeline",
     "doc_url": "https://www.michaeljared.ca",
-    "blender": (2, 80, 0),
+    "tracker_url": "https://github.com/bikemurt/VertexPipeline/issues",
+    "blender": (4, 4, 0),
     "category": "Generic"
 }
 
