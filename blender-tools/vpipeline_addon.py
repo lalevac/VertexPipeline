@@ -162,7 +162,7 @@ class VPipelinePanel(Panel):
                     index = 0
                 elif props.active_palette == props.metal_name:
                     s = "Metal"
-                    index = 0
+                    index = 1
                 
                 if s != "":
                     row = box.row()
