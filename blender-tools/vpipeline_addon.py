@@ -32,7 +32,7 @@ from bpy.props import (
     
 ### PROPS
 
-class VPipelineProperties(PropertyGroup):   
+class VPipelineProperties(PropertyGroup):
     color_name : StringProperty(name = "Color Vertex Data", default = "ColorX", description = "Color Vertex Data")
     metal_name : StringProperty(name = "Metal/Rough Vertex Data", default = "MetalX", description = "Color Vertex Data")
     v_name : StringProperty(name = "V Name", default = "", description = "Current Vertex Data Name")
